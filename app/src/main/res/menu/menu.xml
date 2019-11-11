@@ -6,4 +6,9 @@
         android:id="@+id/my_cat"
         android:icon="@drawable/cat"
         app:showAsAction="always"/>
+    <item
+        android:title="my earth"
+        android:id="@+id/earth"
+        android:icon="@drawable/earth"
+        app:showAsAction="always"/>
 </menu>

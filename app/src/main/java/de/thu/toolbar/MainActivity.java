@@ -12,8 +12,11 @@ import androidx.appcompat.widget.Toolbar;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final String tag = "desiredOutputs";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.i(tag, "you entered onCreate");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         // create the toolbar object
@@ -26,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
     // set menu resource for the toolbar by adding a method
     @Override public boolean onCreateOptionsMenu(Menu menu) {
-        // inflate menu widget
+        // inflate menu xml file
         getMenuInflater().inflate(R.menu.menu, menu); return true;
     }
     // a method to handle what happens when a user presses on an item in the app bar
@@ -36,11 +39,14 @@ public class MainActivity extends AppCompatActivity {
     @Override public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.my_cat:
-                Log.i("AppBarExample", "Yes, you clicked!");
+                Log.i(tag, "you clicked on the cute cat");
+                return true;
+            case R.id.earth:
+                Log.i(tag, "you clicked on the earth");
                 return true;
             default:
+               Log.i(tag, "nothing happened");
                 return super.onOptionsItemSelected(item);
-
         }
     }
 
